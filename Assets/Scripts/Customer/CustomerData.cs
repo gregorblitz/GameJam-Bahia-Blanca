@@ -15,14 +15,11 @@ public class CustomerData : ScriptableObject
     public GameObject AvatarPrefab;
 
     [Header("Stats")]
-    public List<StatData> Stats = new();
-
-    [Serializable]
-    public class StatData
-    {
-        public StatType Type;
-
-        [Range(0, 100)]
-        public int Value = 50;
-    }
+    public List<Stat> Stats = new();
+    [Header("StatObjective")]
+    public List<StatObjective> Objectives  = new();
+    
+    [Header("Treatment")]
+    [Range(1, 3)]
+    public int MaxDrugs;
 }

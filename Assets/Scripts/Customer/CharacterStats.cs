@@ -17,7 +17,7 @@ public class CharacterStats : MonoBehaviour
         if (customerData == null)
             return;
 
-        foreach (CustomerData.StatData statData in customerData.Stats)
+        foreach (Stat statData in customerData.Stats)
         {
             stats.Add(statData.Type, new Stat
             {
@@ -26,7 +26,7 @@ public class CharacterStats : MonoBehaviour
             });
         }
     }
-    public int GetStat(StatType type)
+    public float GetStat(StatType type)
     {
         if (stats.TryGetValue(type, out Stat stat))
             return stat.Value;
@@ -34,7 +34,7 @@ public class CharacterStats : MonoBehaviour
         return 0;
     }
 
-    public void SetStat(StatType type, int value)
+    public void SetStat(StatType type, float value)
     {
         if (!stats.ContainsKey(type))
             return;
@@ -42,13 +42,29 @@ public class CharacterStats : MonoBehaviour
         stats[type].Value = Mathf.Clamp(value, 0, 100);
     }
 
-    public void ModifyStat(StatType type, int amount)
+    public void ModifyStat(StatType type, float amount)
     {
         if (!stats.ContainsKey(type))
             return;
 
         stats[type].Value = Mathf.Clamp(stats[type].Value + amount, 0, 100);
     }
+    public void ApplyModifier(StatModifier modifier)
+    {
+        switch (modifier.ModifierType)
+        {
+            case ModifierType.Add:
+                ModifyStat(modifier.Stat, modifier.Amount);
+                break;
 
+            case ModifierType.Set:
+                SetStat(modifier.Stat, modifier.Amount);
+                break;
+
+            case ModifierType.Multiply:
+                SetStat(modifier.Stat, GetStat(modifier.Stat) * modifier.Amount);
+                break;
+        }
+    }
     public CustomerData Data => customerData;
 }
