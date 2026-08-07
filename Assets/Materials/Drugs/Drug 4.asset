@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ad3509aad63b14386a4269c697eeaf, type: 3}
+  m_Name: Drug 4
+  m_EditorClassIdentifier: Assembly-CSharp::DrugData
+  DrugName: Calmifen
+  CodeName: 
+  Description: 
+  DurationHours: 24
+  StatModifiers:
+  - Stat: 0
+    ModifierType: 0
+    Amount: -20
+  - Stat: 2
+    ModifierType: 0
+    Amount: -20
+  - Stat: 1
+    ModifierType: 0
+    Amount: -20
+  RequiredComponents:
+  - ComponentId: 
+    Amount: 0

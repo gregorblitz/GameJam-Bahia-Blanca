@@ -21,22 +21,4 @@ public class DrugData : ScriptableObject
 
     [Header("Components (Future)")]
     public List<ComponentRequirement> RequiredComponents = new();
-
-    [Serializable]
-    public class StatModifier
-    {
-        public StatType Stat;
-
-        [Tooltip("Positive or negative value.")]
-        public int Amount;
-    }
-
-    [Serializable]
-    public class ComponentRequirement
-    {
-        public string ComponentId;
-
-        [Min(1)]
-        public int Amount = 1;
-    }
 }

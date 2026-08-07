@@ -25,5 +25,5 @@ public class Stat
     public int MaxValue = 100;
 
     [Range(0, 100)]
-    public int Value = 50;
+    public float Value = 50;
 }
