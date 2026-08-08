@@ -3,41 +3,99 @@ using UnityEngine;
 
 public class CustomerQueue : MonoBehaviour
 {
-    private readonly Queue<Customer> queue = new();
+    [Header("Customers for testing")]
+    [SerializeField] private List<Customer> startingCustomers = new();
 
-    public Customer CurrentCustomer { get; private set; }
+    [Header("Queue Positions")]
+    [SerializeField] private Transform[] customerSpawnPoints;
+
+    private readonly List<Customer> customers = new();
+
+    public Customer CurrentCustomer
+    {
+        get
+        {
+            if (customers.Count == 0)
+                return null;
+
+            return customers[0];
+        }
+    }
+
+    private void Start()
+    {
+        foreach (Customer customer in startingCustomers)
+        {
+            if (customer != null)
+                AddCustomer(customer);
+        }
+    }
 
     public void AddCustomer(Customer customer)
     {
-        queue.Enqueue(customer);
+        if (customer == null)
+            return;
 
-        if (CurrentCustomer == null)
-            SpawnNextCustomer();
+        customers.Add(customer);
+
+        UpdateQueuePositions();
     }
 
     public void CustomerFinished()
     {
-        if (CurrentCustomer == null)
+        if (customers.Count == 0)
             return;
 
-        CurrentCustomer = null;
+        Customer finishedCustomer = customers[0];
 
-        SpawnNextCustomer();
+        customers.RemoveAt(0);
+
+       // finishedCustomer.LeaveQueue();
+
+        UpdateQueuePositions();
     }
 
-    private void SpawnNextCustomer()
+    private void UpdateQueuePositions()
     {
-        if (queue.Count == 0)
-            return;
+        int positionCount = Mathf.Min(customers.Count, customerSpawnPoints.Length);
 
-        CurrentCustomer = queue.Dequeue();
+        for (int i = 0; i < positionCount; i++)
+        {
+            if (customerSpawnPoints[i] == null)
+                continue;
 
-        // Aquí luego puedes moverlo al mostrador,
-        // reproducir una animación, etc.
+            Customer customer = customers[i];
+
+            if (customer == null)
+                continue;
+
+            Transform customerTransform = customer.CustomerModel.transform;
+
+            // Lo hacemos hijo del punto de la fila.
+            customerTransform.SetParent(customerSpawnPoints[i]);
+
+            // Eliminamos cualquier posición/rotación local anterior.
+            customerTransform.localPosition = Vector3.zero;
+            customerTransform.localRotation = Quaternion.identity;
+            customerTransform.localScale = Vector3.one;
+        }
     }
 
     public bool HasCustomers()
     {
-        return CurrentCustomer != null || queue.Count > 0;
+        return customers.Count > 0;
+    }
+
+    public int GetCustomerCount()
+    {
+        return customers.Count;
+    }
+
+    public Customer GetCustomerAt(int index)
+    {
+        if (index < 0 || index >= customers.Count)
+            return null;
+
+        return customers[index];
     }
 }

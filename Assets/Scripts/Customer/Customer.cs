@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,17 +9,22 @@ public enum CustomerState
     InTreatment,
     Finished
 }
-
+[Serializable]
 public class Customer : MonoBehaviour
 {
     [SerializeField] private CustomerData data;
     [SerializeField] private CharacterStats stats;
+    public GameObject CustomerModel;
 
     private readonly List<Drug> receivedDrugs = new();
 
     private float satisfaction;
     private bool finishedTreatment;
 
+    public void Awake()
+    {
+        CustomerModel = Instantiate(data.AvatarPrefab);
+    }
     public bool ReceiveDrug(Drug drug)
     {
         if (finishedTreatment)
