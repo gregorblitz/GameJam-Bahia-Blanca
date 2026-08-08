@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CustomerData
   CustomerName: 
   Description: 
-  AvatarPrefab: {fileID: 3210799471036827451, guid: b11f803fba1af384fa3b1a40196a2332, type: 3}
+  AvatarPrefab: {fileID: 8533474298733822688, guid: 9b86c7ae709970a4b9bf4c2418f2b0e7, type: 3}
   Stats:
   - Type: 0
     MinValue: 40

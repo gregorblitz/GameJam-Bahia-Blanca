@@ -57,4 +57,4 @@ MonoBehaviour:
     MinValue: 0
     MaxValue: 40
     Required: 1
-  MaxDrugs: 2
+  MaxDrugs: 3

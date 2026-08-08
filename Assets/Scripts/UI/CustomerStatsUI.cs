@@ -56,7 +56,6 @@ public class CustomerStatsUI : MonoBehaviour
         }
 
         CharacterStats stats = currentCustomer.GetComponent<CharacterStats>();
-
         if (stats == null)
         {
             ClearScrollbars();
@@ -65,9 +64,10 @@ public class CustomerStatsUI : MonoBehaviour
 
         foreach (KeyValuePair<StatType, Scrollbar> entry in scrollbars)
         {
+            Debug.Log($"Updating scrollbar for stat: {entry.Key} , value: {stats.GetStat(entry.Key)}");
             float value = stats.GetStat(entry.Key);
 
-            entry.Value.value = value / 100f;
+            entry.Value.size = value / 100f;
         }
     }
 
