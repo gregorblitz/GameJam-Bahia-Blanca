@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ public enum CustomerState
     InTreatment,
     Finished
 }
-
+[Serializable]
 public class Customer : MonoBehaviour
 {
     [SerializeField] private CustomerData data;

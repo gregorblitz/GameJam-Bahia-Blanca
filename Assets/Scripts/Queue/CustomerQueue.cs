@@ -1,11 +1,24 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class CustomerQueue : MonoBehaviour
 {
+    [SerializeField]
     private readonly Queue<Customer> queue = new();
+    [Header("Customers for testing")]
+    [SerializeField] private List<Customer> startingCustomers = new();
 
     public Customer CurrentCustomer { get; private set; }
+
+    private void Start()
+    {
+        foreach (Customer customer in startingCustomers)
+        {
+            if (customer != null)
+                AddCustomer(customer);
+        }
+    }
 
     public void AddCustomer(Customer customer)
     {
