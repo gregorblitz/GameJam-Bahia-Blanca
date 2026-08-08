@@ -2,6 +2,14 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+//****************************************
+//******DESCRIPCION BUGS SOLUCIONADOS*****
+//****************************************
+//BUG1 :Clientes avanzan a la siguiente posicion
+//      pero se solapan en la posicion 1 y no
+//      aparece C3. Eliminacion deinstanciaciones 
+//      de npc para evitar solapamiento de npc
+//SCRIPTS: Customer y CustomerQueue 
 
 public enum CustomerState
 {
@@ -23,7 +31,19 @@ public class Customer : MonoBehaviour
 
     public void Awake()
     {
-        CustomerModel = Instantiate(data.AvatarPrefab);
+        //**********SCM-INI-BUG1 *************
+        //CustomerModel = Instantiate(data.AvatarPrefab);
+        // Si la referencia data o AvatarPrefab están asignados, instancia
+        if (data != null && data.AvatarPrefab != null)
+        {
+            CustomerModel = Instantiate(data.AvatarPrefab, transform);
+        }
+        else
+        {
+            // Si el personaje ya tiene su gráfico configurado en la escena
+            CustomerModel = gameObject;
+        }
+        //**********SCM-FIN-BUG1 *************
     }
     public bool ReceiveDrug(Drug drug)
     {

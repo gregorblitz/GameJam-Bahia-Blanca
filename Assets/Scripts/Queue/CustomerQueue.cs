@@ -1,6 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//****************************************
+//******DESCRIPCION BUGS SOLUCIONADOS*****
+//****************************************
+//BUG1 :Clientes avanzan a la siguiente posicion
+//      pero se solapan en la posicion 1 y no
+//      aparece C3. Eliminacion deinstanciaciones 
+//      de npc para evitar solapamiento de npc 
+//SCRIPTS: Customer y CustomerQueue 
+
+
 public class CustomerQueue : MonoBehaviour
 {
     [Header("Customers for testing")]
@@ -50,7 +60,18 @@ public class CustomerQueue : MonoBehaviour
 
         customers.RemoveAt(0);
 
-       // finishedCustomer.LeaveQueue();
+        //**********SCM-INI-BUG1 *************
+        // Destruye la representación visual instanciada 
+        if (finishedCustomer != null)
+        {
+            if (finishedCustomer.CustomerModel != null)
+            {
+                Destroy(finishedCustomer.CustomerModel);
+            }
+            Destroy(finishedCustomer.gameObject);
+        }
+        //**********SCM-FIN-BUG1 *************
+        // finishedCustomer.LeaveQueue();
 
         UpdateQueuePositions();
     }
@@ -65,10 +86,12 @@ public class CustomerQueue : MonoBehaviour
                 continue;
 
             Customer customer = customers[i];
-
-            if (customer == null)
+            //**********SCM-INI-BUG1 *************
+            //if (customer == null)
+            //    continue;
+            if (customer == null || customer.CustomerModel == null)
                 continue;
-
+            //**********SCM-FIN-BUG1 *************
             Transform customerTransform = customer.CustomerModel.transform;
 
             // Lo hacemos hijo del punto de la fila.
