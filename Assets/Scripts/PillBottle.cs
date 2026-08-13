@@ -75,22 +75,28 @@ public class PillBottle : MonoBehaviour, IPointerClickHandler
     }
 
     private IEnumerator AvanzarSiguienteClienteCo(Customer cliente)
-{
-    procesandoTransicion = true;
+    {
+        procesandoTransicion = true;
 
-    // Pausa para observar el resultado
-    yield return new WaitForSeconds(1.5f);
+        // Pausa para observar el resultado
+        yield return new WaitForSeconds(1.5f);
 
-    // Evalua resultados
-    TreatmentResult resultado = cliente.Evaluate(precioBaseTratamiento);
-    Debug.Log($"Satisfacción: {resultado.Satisfaction}% | Propina: ${resultado.Tip}");
+        // Evalua resultados
+        TreatmentResult resultado = cliente.Evaluate(precioBaseTratamiento);
+        Debug.Log($"Satisfacción: {resultado.Satisfaction}% | Propina: ${resultado.Tip}");
 
-    // Avanza la fila
-    customerQueue.CustomerFinished();
+        // Registra la ganancia en la UI
+        if (EconomyUI.Instance != null)
+        {
+            EconomyUI.Instance.AddEarnings(precioBaseTratamiento, resultado.Tip);
+        }
 
-    // Espera un pequeño tiempo extra antes de liberar los clics para el nuevo cliente
-    yield return new WaitForSeconds(0.5f);
+        // Avanza la fila
+        customerQueue.CustomerFinished();
 
-    procesandoTransicion = false;
-}
+        // Espera un pequeño tiempo extra antes de liberar los clics para el nuevo cliente
+        yield return new WaitForSeconds(0.5f);
+
+        procesandoTransicion = false;
+    }
 }
