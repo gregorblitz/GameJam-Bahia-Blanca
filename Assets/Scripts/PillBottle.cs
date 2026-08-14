@@ -78,25 +78,35 @@ public class PillBottle : MonoBehaviour, IPointerClickHandler
     {
         procesandoTransicion = true;
 
-        // Pausa para observar el resultado
+        // Pausa para que el jugador observe los stats finales
         yield return new WaitForSeconds(1.5f);
 
-        // Evalua resultados
+        // Evalua el cliente
         TreatmentResult resultado = cliente.Evaluate(precioBaseTratamiento);
         Debug.Log($"Satisfacción: {resultado.Satisfaction}% | Propina: ${resultado.Tip}");
 
-        // Registra la ganancia en la UI
+        // Actualiza la UI pasando base, propina y satisfacción
         if (EconomyUI.Instance != null)
         {
-            EconomyUI.Instance.AddEarnings(precioBaseTratamiento, resultado.Tip);
+            EconomyUI.Instance.AddEarnings(precioBaseTratamiento, resultado.Tip, resultado.Satisfaction);
         }
 
-        // Avanza la fila
+        // Espera 2 segundos para que el jugador lea el mensaje de satisfacción
+        yield return new WaitForSeconds(2.0f);
+
+        // Hace avanzar la fila
         customerQueue.CustomerFinished();
 
-        // Espera un pequeño tiempo extra antes de liberar los clics para el nuevo cliente
-        yield return new WaitForSeconds(0.5f);
+        // Verifica si la fila quedó vacía tras terminar
+        if (!customerQueue.HasCustomers())
+        {
+            if (EconomyUI.Instance != null)
+            {
+                EconomyUI.Instance.MostrarAvisoSinClientes();
+            }
+        }
 
+        yield return new WaitForSeconds(0.3f);
         procesandoTransicion = false;
     }
 }
