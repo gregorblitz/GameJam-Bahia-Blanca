@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class PillBottle : MonoBehaviour, IPointerClickHandler
 {
@@ -8,10 +9,25 @@ public class PillBottle : MonoBehaviour, IPointerClickHandler
     [SerializeField] private CustomerQueue customerQueue;
     [SerializeField] private float precioBaseTratamiento = 50f;
 
+    [Header("Sistema de Inventario")]
+    [SerializeField] private int stockDisponible = 5; // Cantidad inicial de pastillas
+    [SerializeField] private TextMeshPro stockText; // 2D/3D (TextMeshPro) o TextMeshProUGUI si está en Canvas
+
     private static bool procesandoTransicion = false;
+
+    private void Start()
+    {
+        ActualizarTextoStock();
+    }
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        // Verifica si hay stock disponible
+        if (stockDisponible <= 0)
+        {
+            Debug.LogWarning($"¡Sin stock de {drugData.DrugName}!");
+            return;
+        }
         // Si estamos esperando a que pase el siguiente cliente, ignoramos clics
         if (procesandoTransicion)
             return;
@@ -45,7 +61,10 @@ public class PillBottle : MonoBehaviour, IPointerClickHandler
 
             if (exito)
             {
-                Debug.Log($"¡Dosis de {drugData.DrugName} entregada!");
+                // Descuenta 1 unidad del inventario y actualiza pantalla
+                stockDisponible--;
+                ActualizarTextoStock();
+                Debug.Log($"¡Dosis de {drugData.DrugName} entregada! Stock restante: {stockDisponible}");
 
                 // Verificamos si alcanzamos la cantidad máxima permitida para este cliente
                 // Accedemos a la lista de drogas recibidas
@@ -70,6 +89,20 @@ public class PillBottle : MonoBehaviour, IPointerClickHandler
             else
             {
                 Debug.LogWarning("El cliente no acepta más medicinas.");
+            }
+        }
+    }
+
+    private void ActualizarTextoStock()
+    {
+        if (stockText != null)
+        {
+            stockText.text = $"x{stockDisponible}";
+            
+            // Si se agota, cambia el color a rojo
+            if (stockDisponible <= 0)
+            {
+                stockText.color = Color.red;
             }
         }
     }
