@@ -91,7 +91,7 @@ public class EconomyUI : MonoBehaviour
             }
             else
             {
-                lastEarningText.text = $"+${basePrice:F0} (Base) | (Sin propina)";
+                lastEarningText.text = $"${basePrice:F0} (Base) Sin propina";
             }
             lastEarningText.gameObject.SetActive(true);
         }
