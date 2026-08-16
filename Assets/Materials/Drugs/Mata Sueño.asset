@@ -10,25 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90ad3509aad63b14386a4269c697eeaf, type: 3}
-  m_Name: Drug 5
+  m_Name: "Mata Sue\xF1o"
   m_EditorClassIdentifier: Assembly-CSharp::DrugData
-  DrugName: concentrax
+  DrugName: "Mata Sue\xF1o"
   CodeName: 
   Description: 
   DurationHours: 24
   StatModifiers:
   - Stat: 0
     ModifierType: 0
-    Amount: 10
-  - Stat: 1
-    ModifierType: 0
-    Amount: 40
+    Amount: 20
   - Stat: 2
     ModifierType: 0
     Amount: 20
-  - Stat: 4
-    ModifierType: 0
-    Amount: -20
   RequiredComponents:
   - ComponentId: 
     Amount: 0

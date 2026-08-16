@@ -64,7 +64,7 @@ public class CustomerStatsUI : MonoBehaviour
 
         foreach (KeyValuePair<StatType, Scrollbar> entry in scrollbars)
         {
-            Debug.Log($"Updating scrollbar for stat: {entry.Key} , value: {stats.GetStat(entry.Key)}");
+//            Debug.Log($"Updating scrollbar for stat: {entry.Key} , value: {stats.GetStat(entry.Key)}");
             float value = stats.GetStat(entry.Key);
 
             entry.Value.size = value / 100f;

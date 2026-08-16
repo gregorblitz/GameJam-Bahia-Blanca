@@ -15,6 +15,10 @@ public class DrugData : ScriptableObject
     [Header("Duration")]
     [Min(0)]
     public float DurationHours = 24f;
+    
+    [Header("Costo")]
+    [Min(0)]
+    public float Cost = 10f;
 
     [Header("Stat Effects")]
     public List<StatModifier> StatModifiers = new();
