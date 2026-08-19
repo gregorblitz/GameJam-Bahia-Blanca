@@ -6,9 +6,12 @@ public class DrugSlotInteraction : MonoBehaviour,IPointerEnterHandler, IPointerE
     [Header("References")]
     [SerializeField] private DrugSlot slot;
     [SerializeField] private PlayerHand playerHand;
+    private SpriteRenderer spriteRenderer;
 
+    private static readonly int OutlineEnabled = Shader.PropertyToID("_OutlineEnabled");
+    private Material material;
     [Header("Highlight")]
-    [SerializeField] private GameObject highlightObject;
+    private GameObject highlightObject;
 
     private void Awake()
     {
@@ -16,16 +19,40 @@ public class DrugSlotInteraction : MonoBehaviour,IPointerEnterHandler, IPointerE
             slot = GetComponent<DrugSlot>();
 
         SetHighlight(false);
+        if(highlightObject != null)
+        {
+            spriteRenderer = highlightObject.GetComponent<SpriteRenderer>();
+
+        }else
+        ReSearch();
+        
+    }
+    void ReSearch()
+    {
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        if (spriteRenderer != null)
+        {
+            // Crea/obtiene una instancia del material para este SpriteRenderer.
+            material = spriteRenderer.material;
+        }
+        else
+        {
+            material = null;
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        
+        ReSearch();
         Debug.Log("Mouse entered DrugSlotInteraction");
         SetHighlight(true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        Debug.Log("Mouse exited DrugSlotInteraction");
         SetHighlight(false);
     }
 
@@ -93,7 +120,10 @@ public class DrugSlotInteraction : MonoBehaviour,IPointerEnterHandler, IPointerE
 
     private void SetHighlight(bool state)
     {
-        if (highlightObject != null)
-            highlightObject.SetActive(state);
+        
+        if (material != null)
+        {
+            material.SetFloat(OutlineEnabled, state ? 1f : 0f);
+        }
     }
 }

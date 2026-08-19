@@ -14,7 +14,7 @@ public class DrugSlot : MonoBehaviour
     [SerializeField] private Transform slotTransform;
 
     [Header("Stack")]
-    [SerializeField] private float stackOffset = 0.05f;
+    [SerializeField] private float stackOffset = 0.5f;
 
     [SerializeField]private List<Drug> drugs = new();
 
@@ -64,7 +64,7 @@ public class DrugSlot : MonoBehaviour
 
         drug.transform.localPosition = new Vector3(-stackOffset , stackOffset , -stackOffset )* (drugs.Count - 1);
 
-        drug.transform.localRotation = Quaternion.identity;
+        drug.transform.localRotation = Quaternion.Euler(36.73f, 0f, 0f);
 
         return true;
     }
