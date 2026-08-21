@@ -14,7 +14,12 @@ public class EconomyUI : MonoBehaviour
     [Header("Aviso Fin de Clientes")]
     [SerializeField] private TextMeshProUGUI noMoreCustomersText; // Texto "Sin clientes"
 
+    [Header("Configuración Inicial")]
+    [SerializeField] private float dineroInicial = 100f; // Dinero con el que arranca el jugador
+
     private float totalMoney = 0f;
+
+    public float TotalMoney => totalMoney;
 
     private void Awake()
     {
@@ -30,6 +35,7 @@ public class EconomyUI : MonoBehaviour
 
     private void Start()
     {
+        totalMoney = dineroInicial;
         UpdateTotalMoneyUI();
         LimpiarFeedback();
 
@@ -70,6 +76,20 @@ public class EconomyUI : MonoBehaviour
         // Muestra el feedback en pantalla con temporizador
         StopAllCoroutines();
         StartCoroutine(MostrarFeedbackTemporalCo(statusMsg, statusColor, basePrice, tip));
+    }
+
+    // Intenta gastar dinero al realizar una compra en la PC.
+    public bool TrySpendMoney(float amount)
+    {
+        if (totalMoney >= amount)
+        {
+            totalMoney -= amount;
+            UpdateTotalMoneyUI();
+            return true;
+        }
+
+        Debug.LogWarning("No tienes suficiente dinero para esta compra.");
+        return false;
     }
 
     private IEnumerator MostrarFeedbackTemporalCo(string statusMsg, Color color, float basePrice, float tip)

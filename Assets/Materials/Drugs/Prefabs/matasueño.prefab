@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6399536487134911204}
   - component: {fileID: 7759618282161155123}
   - component: {fileID: 142184097714920847}
+  - component: {fileID: 8466887747465599333}
   m_Layer: 0
   m_Name: "matasue\xF1o"
   m_TagString: Untagged
@@ -26,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 230062470714987844}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.31506935, y: 0, z: 0, w: 0.94906867}
+  m_LocalRotation: {x: 0.0052795885, y: 0, z: 0, w: 0.99998605}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.049999993, y: 0.049999997, z: 0.04999999}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 36.73, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.605, y: 0, z: 0}
 --- !u!212 &7759618282161155123
 SpriteRenderer:
   serializedVersion: 2
@@ -105,3 +106,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drug
   data: {fileID: 11400000, guid: 56627ef14d06853448e34230acd568da, type: 2}
+--- !u!61 &8466887747465599333
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230062470714987844}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 1.43, y: 0, z: 0, w: 1.05}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8.25, y: 5.4}
+    newSize: {x: 8.25, y: 5.4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 8.25, y: 5.4}
+  m_EdgeRadius: 0
