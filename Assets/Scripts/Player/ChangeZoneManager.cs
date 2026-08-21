@@ -4,7 +4,9 @@ using System.Collections.Generic;
 public class ChangeZoneManager : MonoBehaviour
 {
     [SerializeField] private Transform player;
+    [SerializeField] private GameObject statCustomerPanel; // Asigna aquí el objeto Statcustomer para desact al cambiar de pantalla
     public static ChangeZoneManager Instance { get; private set; }
+
 
     public void Awake()
     {
@@ -13,7 +15,7 @@ public class ChangeZoneManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        
+
         Instance = this;
     }
     [SerializeField] private List<Transform> zones = new();
@@ -27,6 +29,7 @@ public class ChangeZoneManager : MonoBehaviour
         }
         else
             transform.position = zones[CurrentZoneIndex].position;
+        ActualizarVisibilidadStats();
     }
     public void ChangeZone(int zoneIndex)
     {
@@ -42,13 +45,24 @@ public class ChangeZoneManager : MonoBehaviour
 
         Debug.Log($"Changing zone to index: {zoneIndex}");
         // Move the player to the target zone's position
-        if(player == null)
+        if (player == null)
         {
             Debug.LogWarning("Player reference is not assigned in ChangeZoneManager.");
             return;
         }
         player.position = targetZone.position;
         CurrentZoneIndex = zoneIndex;
+
+        ActualizarVisibilidadStats();
+    }
+    
+    private void ActualizarVisibilidadStats()
+    {
+        if (statCustomerPanel != null)
+        {
+            // Solo se muestra si estamos en la zona 0 (zona1Caja)
+            statCustomerPanel.SetActive(CurrentZoneIndex == 0);
+        }
     }
 
 }

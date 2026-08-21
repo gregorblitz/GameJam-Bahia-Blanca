@@ -16,6 +16,7 @@ MonoBehaviour:
   CodeName: 
   Description: 
   DurationHours: 24
+  Cost: 40
   StatModifiers:
   - Stat: 0
     ModifierType: 0
