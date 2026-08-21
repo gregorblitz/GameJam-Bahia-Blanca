@@ -47,6 +47,7 @@ public class MusicManager : MonoBehaviour
             return;
         }
 
+        ShufflePlaylist();
         currentSongIndex = 0;
         playlistActive = true;
         PlayCurrentSong();
@@ -61,6 +62,17 @@ public class MusicManager : MonoBehaviour
     private void PlayNextSong()
     {
         PlayCurrentSong();
+    }
+
+    private void ShufflePlaylist()
+    {
+        for (int index = playlist.Length - 1; index > 0; index--)
+        {
+            int randomIndex = Random.Range(0, index + 1);
+            AudioClip temporarySong = playlist[index];
+            playlist[index] = playlist[randomIndex];
+            playlist[randomIndex] = temporarySong;
+        }
     }
 
     private void PlayCurrentSong()
