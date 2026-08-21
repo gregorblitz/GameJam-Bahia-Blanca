@@ -5,6 +5,7 @@ public class CashRegisterInteraction : MonoBehaviour, IPointerEnterHandler, IPoi
 {
     [SerializeField] private CashRegister cashRegister;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private AudioSource audioSource;
 
     private static readonly int OutlineEnabled = Shader.PropertyToID("_OutlineEnabled");
     private Material material;
@@ -39,6 +40,7 @@ public class CashRegisterInteraction : MonoBehaviour, IPointerEnterHandler, IPoi
         if (cashRegister != null)
         {
             cashRegister.ProcessPurchase();
+            audioSource.Play();
         }
         else
         {

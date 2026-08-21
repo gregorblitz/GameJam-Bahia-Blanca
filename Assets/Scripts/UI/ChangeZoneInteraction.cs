@@ -5,6 +5,7 @@ public class ChangeZoneInteraction: MonoBehaviour, IPointerEnterHandler, IPointe
 {
     [SerializeField] private int direction = 1; // 1 for next zone, -1 for previous zone
     [SerializeField] private SpriteRenderer highlightObject;
+    [SerializeField] private AudioSource audioSource;
     public void OnPointerEnter(PointerEventData eventData)
     {
         // Optional: Add visual feedback for hover state
@@ -22,6 +23,7 @@ public class ChangeZoneInteraction: MonoBehaviour, IPointerEnterHandler, IPointe
     {
         // Optional: Add visual feedback for click state
         Debug.Log("Mouse clicked ChangeZoneInteraction");
+        audioSource.Play();
         ChangeZoneManager.Instance.ChangeZone(ChangeZoneManager.Instance.CurrentZoneIndex + direction);
     }
 
