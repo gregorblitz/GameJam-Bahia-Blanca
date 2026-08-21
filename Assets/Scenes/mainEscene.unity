@@ -1251,7 +1251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 68574868}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!61 &68574870
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3301,7 +3301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 403094537}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!61 &403094539
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3891,7 +3891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 462305007}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!114 &462305007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4872,7 +4872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 628829232}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!61 &628829234
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5138,7 +5138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 632714226}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!114 &632714226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5437,7 +5437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 662015744}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!61 &662015746
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5655,7 +5655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 694077988}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!114 &694077988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6383,7 +6383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 779242859}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!114 &779242859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6828,7 +6828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 824880350}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!114 &824880350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7239,7 +7239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 886314152}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!114 &886314152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8428,7 +8428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 1041795101}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!114 &1041795101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8723,7 +8723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 1086784526}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!114 &1086784526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8839,7 +8839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 1119501159}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!61 &1119501161
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9145,7 +9145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 1179637278}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!114 &1179637278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10740,7 +10740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 1336432445}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!114 &1336432445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10853,7 +10853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 1361961328}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!114 &1361961328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11342,7 +11342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 1422697640}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!114 &1422697640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11833,7 +11833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 1506814243}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!61 &1506814245
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13046,7 +13046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 1755818304}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!114 &1755818304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13820,7 +13820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 1795478567}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!61 &1795478569
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14626,7 +14626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 1877365579}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!114 &1877365579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14883,7 +14883,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 338.9, y: 221.5}
+  m_AnchoredPosition: {x: 755, y: 461}
   m_SizeDelta: {x: 410, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1918035492
@@ -15210,7 +15210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 1953366465}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!114 &1953366465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15476,7 +15476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 1974275631}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!114 &1974275631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15838,7 +15838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 1996197093}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!114 &1996197093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16385,7 +16385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 2091027672}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!114 &2091027672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16501,7 +16501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrugSlotInteraction
   slot: {fileID: 2093153085}
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 1965844963}
 --- !u!61 &2093153087
 BoxCollider2D:
   m_ObjectHideFlags: 0
