@@ -30,15 +30,15 @@ public class ShopItemUI : MonoBehaviour
 
         if (buyButton != null)
         {
-            buyButton.onClick.RemoveAllListeners();
-            buyButton.onClick.AddListener(OnBuyClicked);
+            //buyButton.onClick.RemoveAllListeners();
+            //buyButton.onClick.AddListener(OnBuyClicked);
         }
     }
 
     private void Start()
     {
         if (buyButton != null)
-            buyButton.onClick.AddListener(OnBuyClicked);
+            //buyButton.onClick.AddListener(OnBuyClicked);
 
         ActualizarTextos();
     }
@@ -54,6 +54,7 @@ public class ShopItemUI : MonoBehaviour
 
     public void OnBuyClicked()
     {
+        Debug.LogWarning("OnBuyClicked method invoked.");
         if (drugData == null || drugPhysicalPrefab == null)
         {
             Debug.LogWarning("Faltan datos de DrugData o Prefab en este botón.");
