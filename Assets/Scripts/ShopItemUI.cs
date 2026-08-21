@@ -38,7 +38,7 @@ public class ShopItemUI : MonoBehaviour
     private void Start()
     {
         if (buyButton != null)
-            //buyButton.onClick.AddListener(OnBuyClicked);
+            buyButton.onClick.AddListener(OnBuyClicked);
 
         ActualizarTextos();
     }
