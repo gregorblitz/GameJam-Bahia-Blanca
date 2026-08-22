@@ -21,31 +21,31 @@ MonoBehaviour:
     MaxValue: 0
     Value: 0
   - Type: 0
-    MinValue: 0
+    MinValue: 19
     MaxValue: 100
     Value: 44.8
   - Type: 0
-    MinValue: 0
+    MinValue: 31
     MaxValue: 100
     Value: 42.3
   - Type: 0
-    MinValue: 0
+    MinValue: 16
     MaxValue: 100
     Value: 47.2
   - Type: 0
-    MinValue: 0
+    MinValue: 6
     MaxValue: 100
     Value: 57.7
   - Type: 0
-    MinValue: 0
+    MinValue: 32
     MaxValue: 100
     Value: 68.1
   - Type: 0
-    MinValue: 0
+    MinValue: 11
     MaxValue: 100
     Value: 61.3
   - Type: 0
-    MinValue: 0
+    MinValue: 9
     MaxValue: 100
     Value: 55.8
   Objectives:

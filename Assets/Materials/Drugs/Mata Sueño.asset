@@ -24,6 +24,12 @@ MonoBehaviour:
   - Stat: 2
     ModifierType: 0
     Amount: 20
+  - Stat: 4
+    ModifierType: 0
+    Amount: 20
+  - Stat: 6
+    ModifierType: 0
+    Amount: 20
   RequiredComponents:
   - ComponentId: 
     Amount: 0

@@ -29,7 +29,7 @@ MonoBehaviour:
     MaxValue: 50
     Value: 60
   - Type: 3
-    MinValue: 0
+    MinValue: 6
     MaxValue: 50
     Value: 10
   - Type: 4
