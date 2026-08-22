@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74b5c7f39e6a8434d97955463c1d6420, type: 3}
+  m_Name: Customer10
+  m_EditorClassIdentifier: Assembly-CSharp::CustomerData
+  CustomerName: 
+  Description: 
+  AvatarPrefab: {fileID: 2066212062710306467, guid: f5b918a153f61e24d89a2f603be9d110, type: 3}
+  Stats:
+  - Type: 0
+    MinValue: 0
+    MaxValue: 0
+    Value: 0
+  - Type: 0
+    MinValue: 0
+    MaxValue: 100
+    Value: 52.1
+  - Type: 0
+    MinValue: 0
+    MaxValue: 100
+    Value: 45.4
+  - Type: 0
+    MinValue: 0
+    MaxValue: 100
+    Value: 36.8
+  - Type: 0
+    MinValue: 0
+    MaxValue: 100
+    Value: 58.9
+  - Type: 0
+    MinValue: 0
+    MaxValue: 100
+    Value: 33.1
+  - Type: 0
+    MinValue: 0
+    MaxValue: 100
+    Value: 32.5
+  - Type: 0
+    MinValue: 0
+    MaxValue: 100
+    Value: 25.2
+  Objectives:
+  - Stat: 2
+    MinValue: 0
+    MaxValue: 100
+    Required: 0
+  - Stat: 1
+    MinValue: 0
+    MaxValue: 100
+    Required: 0
+  MaxDrugs: 1

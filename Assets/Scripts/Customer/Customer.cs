@@ -21,6 +21,14 @@ public enum CustomerState
 public class Customer : MonoBehaviour
 {
     [SerializeField] private CustomerData data;
+
+    public CustomerData Data
+{
+    get 
+    { 
+        return data; 
+    }
+}
     [SerializeField] private CharacterStats stats;
     public GameObject CustomerModel;
 
