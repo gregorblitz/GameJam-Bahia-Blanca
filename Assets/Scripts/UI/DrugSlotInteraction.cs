@@ -8,6 +8,10 @@ public class DrugSlotInteraction : MonoBehaviour,IPointerEnterHandler, IPointerE
     [SerializeField] private PlayerHand playerHand;
     private SpriteRenderer spriteRenderer;
 
+    void Start()
+    {
+        playerHand = PlayerHand.Instance;
+    }
     private static readonly int OutlineEnabled = Shader.PropertyToID("_OutlineEnabled");
     private Material material;
     [Header("Highlight")]
