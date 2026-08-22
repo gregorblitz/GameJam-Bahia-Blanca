@@ -50,11 +50,11 @@ MonoBehaviour:
     Value: 25.2
   Objectives:
   - Stat: 2
-    MinValue: 0
-    MaxValue: 100
-    Required: 0
+    MinValue: 14
+    MaxValue: 86
+    Required: 1
   - Stat: 1
-    MinValue: 0
-    MaxValue: 100
-    Required: 0
+    MinValue: 11
+    MaxValue: 71
+    Required: 1
   MaxDrugs: 1
