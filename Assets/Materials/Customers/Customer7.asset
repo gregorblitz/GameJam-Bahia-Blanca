@@ -20,31 +20,31 @@ MonoBehaviour:
     MinValue: 0
     MaxValue: 0
     Value: 0
-  - Type: 0
+  - Type: 1
     MinValue: 49
     MaxValue: 100
     Value: 51.5
-  - Type: 0
+  - Type: 2
     MinValue: 24
     MaxValue: 100
     Value: 33.1
-  - Type: 0
+  - Type: 3
     MinValue: 15
     MaxValue: 100
     Value: 12.3
-  - Type: 0
+  - Type: 4
     MinValue: 18
     MaxValue: 100
     Value: 38.7
-  - Type: 0
+  - Type: 5
     MinValue: 27
     MaxValue: 100
     Value: 8.6
-  - Type: 0
+  - Type: 6
     MinValue: 46
     MaxValue: 100
     Value: 9.2
-  - Type: 0
+  - Type: 7
     MinValue: 11
     MaxValue: 100
     Value: 12.3
